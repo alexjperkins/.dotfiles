@@ -3,7 +3,9 @@
 #
 
 # config bash with git
-source ~/.bash_git 
+if [ if ~/.bash_git ]; then
+	source ~/.bash_git
+fi	
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
