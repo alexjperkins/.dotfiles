@@ -8,8 +8,10 @@ source ~/.bash_git
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Aliases 
-source ~/.aliases
+# Aliases
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
 alias ls='ls --color=auto'
 alias la='ls -a'
 PS1='[\u@\h \W]\$ '
