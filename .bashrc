@@ -8,12 +8,11 @@ source ~/.bash_git
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Aliases 
+source ~/.aliases
 alias ls='ls --color=auto'
 alias la='ls -a'
 PS1='[\u@\h \W]\$ '
-
-# monitor command alias
-alias monitor-set-up='xrandr --output HDMI-0 --auto --output DP-2 --auto --right-of HDMI-0 --output DP-5 --auto --right-of DP-2'
 
 # Git branch in prompt
 GIT_PS1_SHOWDIRTYSTATE=1
