@@ -3,7 +3,7 @@
 #
 
 # config bash with git
-if [ if ~/.bash_git ]; then
+if [ -f ~/.bash_git ]; then
 	source ~/.bash_git
 fi	
 
