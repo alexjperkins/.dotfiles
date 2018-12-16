@@ -5,7 +5,7 @@
 # config bash with git
 if [ -f ~/.bash_git ]; then
 	source ~/.bash_git
-fi	
+fi
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -17,18 +17,18 @@ fi
 alias ls='ls --color=auto'
 alias la='ls -a'
 
-#get virtualenv info 
+#get virtualenv info
 BLUE=$(tput setaf 4)
 YELLOW=$(tput setaf 190)
 BRIGHT=$(tput bold)
 COLOUR_NONE=$(tput sgr0)
 
 function __set_virtualenv() {
-	if test -z "$VIRTUAL_ENV" ; then 
+	if test -z "$VIRTUAL_ENV" ; then
 		PYTHON_VIRTUALENV=""
 	else
 		PYTHON_VIRTUALENV="$YELLOW$BOLD(`basename \"$VIRTUAL_ENV\"`)$COLOUR_NONE "
-		printf $PYTHON_VIRTUALENV 
+		printf $PYTHON_VIRTUALENV
 
 	fi
 }
