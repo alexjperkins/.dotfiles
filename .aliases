@@ -1,0 +1,10 @@
+##Aliases for ~/.bashrc file
+
+
+## Add home aliases
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
+## Color
+alias grep='grep --color=auto'
