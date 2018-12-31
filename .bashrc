@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+stty -ixon # Disable ctrl-s & ctrl-q
+shopt -s autocd #Allows cd into a directory by directory name
+
 # config bash with git
 if [ -f ~/.bash_git ]; then
 	source ~/.bash_git
@@ -11,9 +14,13 @@ fi
 [[ $- != *i* ]] && return
 
 # Aliases
+if [ -f ~/.dotfiles/.aliases ]; then
+    source ~/.aliases
+fi
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
+
 alias ls='ls --color=auto'
 alias la='ls -a'
 
@@ -27,7 +34,8 @@ function __set_virtualenv() {
 	if test -z "$VIRTUAL_ENV" ; then
 		PYTHON_VIRTUALENV=""
 	else
-		PYTHON_VIRTUALENV="$YELLOW$BOLD(`basename \"$VIRTUAL_ENV\"`)$COLOUR_NONE "
+		PYTHON_VIRTUALENV="$YELLOW$BOLD(`basename \"$VIRTUAL_ENV\"`)\
+            $COLOUR_NONE "
 		printf $PYTHON_VIRTUALENV
 
 	fi
