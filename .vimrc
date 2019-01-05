@@ -5,8 +5,12 @@
 autocmd! bufwritepost .vimrc source %
 
 " Better copy & paste
-set pastetoggle=<F2>
-set clipboard=unnamed
+vnoremap <C-c> "+y
+map <C-v> "+P
+vnoremap <C-c> "*y :let @+=@*<CR>
+"8: maps C-c to yank to the + register
+"9: maps to paste fromthe + register
+"10: linux only, allows yanking to the primary selection clipboard
 
 " Mouse and backspace
 set mouse=a
